@@ -8,13 +8,24 @@
 import UIKit
 
 class LocationSearchTableViewController: UITableViewController {
-    var cities = [City]()
+//    var cities = [City]()
+    let searchController = UISearchController()
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        
+        navigationItem.searchController = searchController
+        searchController.searchBar.placeholder = "Find city"
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        
+//        print(City.allCities)
 
     }
 
@@ -25,18 +36,25 @@ class LocationSearchTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        return City.allCities.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
         // Configure the cell...
-
+//        cell.textLabel?.text = City.allCities[indexPath.row].name
+//        cell.detailTextLabel?.text = City.allCities[indexPath.row].country
+        let city = City.allCities[indexPath.row]
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = city.name
+        content.secondaryText = city.country
+        
+        cell.contentConfiguration = content
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

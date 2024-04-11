@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C7F-7z-Far">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -21,9 +21,9 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jac-It-3FY">
-                                        <rect key="frame" x="159.33333333333334" y="0.0" width="74.666666666666657" height="177.66666666666666"/>
+                                        <rect key="frame" x="159" y="0.0" width="75" height="177.66666666666666"/>
                                         <color key="tintColor" name="AccentColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
                                         <color key="textColor" red="0.90927380323410034" green="0.46420007944107056" blue="0.89556258916854858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="0.90927380323410034" green="0.46420007944107056" blue="0.89556258916854858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
@@ -31,13 +31,17 @@
                                         <rect key="frame" x="0.0" y="177.66666666666663" width="393" height="177.33333333333337"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auv-W9-SLq">
-                                        <rect key="frame" x="76.666666666666686" y="355" width="240" height="177.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="355" width="393" height="177.66666666666663"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRV-fl-YaY">
-                                                <rect key="frame" x="61.333333333333329" y="71.666666666666686" width="116.99999999999999" height="34.333333333333343"/>
+                                                <rect key="frame" x="144" y="70" width="105.33333333333331" height="37.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
                                                 <color key="tintColor" red="0.90927380323410034" green="0.46420007944107056" blue="0.89556258916854858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Get weather"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Get weather"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Get weather">
+                                                    <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                                                </buttonConfiguration>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,9 +50,9 @@
                                             <constraint firstItem="jRV-fl-YaY" firstAttribute="centerY" secondItem="auv-W9-SLq" secondAttribute="centerY" id="hdX-t2-0qq"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="push the button to get current weather 🤗" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-vp-GG9">
-                                        <rect key="frame" x="42.333333333333343" y="532.66666666666663" width="308.33333333333326" height="177.33333333333337"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="push the button to get current weather 🤗" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-vp-GG9">
+                                        <rect key="frame" x="8.3333333333333428" y="532.66666666666663" width="376.66666666666663" height="177.33333333333337"/>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="16"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" red="0.58901862390000004" green="0.725815667" blue="0.64629813400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
@@ -62,6 +66,8 @@
                             <constraint firstItem="PAH-1X-Ysg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QoS-nm-lz6"/>
                             <constraint firstItem="PAH-1X-Ysg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="VrH-wu-89X"/>
                             <constraint firstItem="PAH-1X-Ysg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="X3s-7m-mx4"/>
+                            <constraint firstItem="auv-W9-SLq" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.25" id="XiX-aV-HZc"/>
+                            <constraint firstItem="auv-W9-SLq" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="hnn-2c-LdB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="cloud.sun" catalog="system" selectedImage="cloud.sun.fill" id="E88-aY-d0S"/>
@@ -78,34 +84,11 @@
         <!--Cities 📍-->
         <scene sceneID="qT1-vO-0Ec">
             <objects>
-                <tableViewController id="xNO-oc-D5J" sceneMemberID="viewController">
+                <tableViewController id="xNO-oc-D5J" customClass="LocationSearchTableViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7PR-5y-Y7V">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Find city" id="NkA-Ju-0wm">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes" textContentType="address-level2"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
-                            <connections>
-                                <outlet property="delegate" destination="xNO-oc-D5J" id="B0M-A8-qU5"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aoa-Lp-cKJ">
-                                <rect key="frame" x="0.0" y="106" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aoa-Lp-cKJ" id="Rdy-nR-Hjb">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="xNO-oc-D5J" id="s7C-33-TGt"/>
                             <outlet property="delegate" destination="xNO-oc-D5J" id="VOA-aj-Xuh"/>
