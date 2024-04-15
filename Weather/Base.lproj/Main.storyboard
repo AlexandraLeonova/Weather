@@ -9,38 +9,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Weather-->
+        <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PAH-1X-Ysg">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="617"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jac-It-3FY">
-                                        <rect key="frame" x="159" y="0.0" width="75" height="177.66666666666666"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Jac-It-3FY">
+                                        <rect key="frame" x="161" y="0.0" width="71" height="154.33333333333334"/>
                                         <color key="tintColor" name="AccentColor"/>
-                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" red="0.90927380323410034" green="0.46420007944107056" blue="0.89556258916854858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="0.90927380323410034" green="0.46420007944107056" blue="0.89556258916854858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="Rwp-7M-QPz">
-                                        <rect key="frame" x="0.0" y="177.66666666666663" width="393" height="177.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="154.33333333333331" width="393" height="154.33333333333331"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auv-W9-SLq">
-                                        <rect key="frame" x="0.0" y="355" width="393" height="177.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="308.66666666666669" width="393" height="154"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRV-fl-YaY">
-                                                <rect key="frame" x="144" y="70" width="105.33333333333331" height="37.333333333333343"/>
+                                                <rect key="frame" x="142.66666666666666" y="61" width="107.66666666666666" height="32"/>
                                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
                                                 <color key="tintColor" red="0.90927380323410034" green="0.46420007944107056" blue="0.89556258916854858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Get weather"/>
                                                 <buttonConfiguration key="configuration" style="tinted" title="Get weather">
-                                                    <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
@@ -51,8 +51,8 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="push the button to get current weather 🤗" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-vp-GG9">
-                                        <rect key="frame" x="8.3333333333333428" y="532.66666666666663" width="376.66666666666663" height="177.33333333333337"/>
-                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="16"/>
+                                        <rect key="frame" x="42.333333333333343" y="462.66666666666657" width="308.33333333333326" height="154.33333333333331"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" red="0.58901862390000004" green="0.725815667" blue="0.64629813400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
@@ -70,8 +70,18 @@
                             <constraint firstItem="auv-W9-SLq" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="hnn-2c-LdB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weather" image="cloud.sun" catalog="system" selectedImage="cloud.sun.fill" id="E88-aY-d0S"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="SuU-XH-vZF">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="cgC-0F-dhM">
+                            <color key="tintColor" red="0.38056503850000001" green="0.46693952150000001" blue="0.42086538099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addToFavourites:" destination="BYZ-38-t0r" id="Xo8-lh-Yyg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="favButton" destination="cgC-0F-dhM" id="yr3-dP-mz1"/>
                         <outlet property="getWeatherButton" destination="jRV-fl-YaY" id="SP5-K1-IEn"/>
                         <outlet property="outputData" destination="G9O-vp-GG9" id="fNX-RI-R4D"/>
                         <outlet property="weatherLabel" destination="Jac-It-3FY" id="QRu-hU-Ejc"/>
@@ -79,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.27480916030527" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="1870.9923664122136" y="-2.1126760563380285"/>
         </scene>
         <!--Cities 📍-->
         <scene sceneID="qT1-vO-0Ec">
@@ -103,7 +113,7 @@
         <!--Favourites-->
         <scene sceneID="3u6-zd-wlt">
             <objects>
-                <tableViewController id="Bx3-iW-w6q" sceneMemberID="viewController">
+                <tableViewController title="Favourites" id="Bx3-iW-w6q" customClass="FavLocationsTableViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="55E-h3-wyl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,11 +133,11 @@
                             <outlet property="delegate" destination="Bx3-iW-w6q" id="unp-uA-uSE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favourites" image="star" catalog="system" selectedImage="star.fill" id="gEJ-6g-3oX"/>
+                    <navigationItem key="navigationItem" title="Favourites 💟" largeTitleDisplayMode="always" id="Kt0-bC-2YJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JC4-ok-Vhg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="1523"/>
+            <point key="canvasLocation" x="2710.6870229007632" y="1522.5352112676057"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m9u-kc-zqG">
@@ -141,9 +151,9 @@
                         <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mE3-YP-4tj"/>
+                        <segue destination="b5T-ps-6EK" kind="relationship" relationship="viewControllers" id="mE3-YP-4tj"/>
                         <segue destination="7aI-nc-zH1" kind="relationship" relationship="viewControllers" id="kbX-0f-JEN"/>
-                        <segue destination="Bx3-iW-w6q" kind="relationship" relationship="viewControllers" id="YOI-0y-98y"/>
+                        <segue destination="v5S-6C-TiC" kind="relationship" relationship="viewControllers" id="YOI-0y-98y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWI-Rl-okC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,15 +179,53 @@
             </objects>
             <point key="canvasLocation" x="1723" y="725"/>
         </scene>
+        <!--Weather-->
+        <scene sceneID="RVz-pS-Xih">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b5T-ps-6EK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weather" image="cloud.sun" catalog="system" selectedImage="cloud.sun.fill" id="E88-aY-d0S"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Irx-5j-CLW">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8Xx-IZ-oZc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FU-t9-kJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.27480916030527" y="-2.1126760563380285"/>
+        </scene>
+        <!--Favourites-->
+        <scene sceneID="TzO-oe-2ta">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v5S-6C-TiC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourites" image="heart" catalog="system" selectedImage="heart.fill" id="gEJ-6g-3oX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XtJ-4I-quw">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bx3-iW-w6q" kind="relationship" relationship="rootViewController" id="ASg-EO-rhb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ojo-00-76Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783.9694656488548" y="1522.5352112676057"/>
+        </scene>
     </scenes>
     <resources>
         <image name="appstore" width="1024" height="1024"/>
         <image name="cloud.sun" catalog="system" width="128" height="98"/>
         <image name="cloud.sun.fill" catalog="system" width="128" height="101"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="location" catalog="system" width="128" height="119"/>
         <image name="location.fill" catalog="system" width="128" height="119"/>
-        <image name="star" catalog="system" width="128" height="116"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

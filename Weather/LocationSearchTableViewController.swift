@@ -7,12 +7,28 @@
 
 import UIKit
 
-class LocationSearchTableViewController: UITableViewController {
-//    var cities = [City]()
+class LocationSearchTableViewController: UITableViewController, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchString = searchController.searchBar.text,
+           !searchString.isEmpty {
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.filteredCities = City.allCities.filter { city in
+                    city.name.localizedCaseInsensitiveContains(searchString) || city.country.localizedCaseInsensitiveContains(searchString)
+                }
+            }
+        } else {
+            filteredCities = City.allCities
+        }
+    }
+    
+    var filteredCities = City.allCities {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     let searchController = UISearchController()
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +38,11 @@ class LocationSearchTableViewController: UITableViewController {
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Find city"
 //        searchController.obscuresBackgroundDuringPresentation = false
-//        navigationItem.hidesSearchBarWhenScrolling = false
-        
-        
-//        print(City.allCities)
-
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.searchTextField.returnKeyType = .done
+        searchController.searchBar.searchTextField.enablesReturnKeyAutomatically = true
+        searchController.searchBar.searchTextField.delegate = self
     }
 
     // MARK: - Table view data source
@@ -36,69 +52,34 @@ class LocationSearchTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return City.allCities.count
+        return filteredCities.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
-        // Configure the cell...
-//        cell.textLabel?.text = City.allCities[indexPath.row].name
-//        cell.detailTextLabel?.text = City.allCities[indexPath.row].country
-        let city = City.allCities[indexPath.row]
+        let city = filteredCities[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
         content.text = city.name
         content.secondaryText = city.country
         
+//        searchController.searchBar.searchTextField.resignFirstResponder()
         cell.contentConfiguration = content
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let navigationController = tabBarController?.viewControllers?.first as? UINavigationController
+        let weatherViewController = navigationController?.viewControllers.first as? WeatherViewController
+        weatherViewController?.city = filteredCities[indexPath.row]
+        tabBarController?.selectedIndex = 0
     }
-    */
+}
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+extension LocationSearchTableViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
